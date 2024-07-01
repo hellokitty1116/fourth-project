@@ -19,38 +19,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Temporary view structure for view `lottoviews`
+-- Table structure for table `comment`
 --
 
-DROP TABLE IF EXISTS `lottoviews`;
-/*!50001 DROP VIEW IF EXISTS `lottoviews`*/;
-SET @saved_cs_client     = @@character_set_client;
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-/*!50001 CREATE VIEW `lottoviews` AS SELECT 
- 1 AS `id`,
- 1 AS `memberno`,
- 1 AS `name`,
- 1 AS `gunno`,
- 1 AS `gunname`,
- 1 AS `amount`,
- 1 AS `datetime`*/;
-SET character_set_client = @saved_cs_client;
+CREATE TABLE `comment` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `memberno` varchar(45) DEFAULT NULL,
+  `name` varchar(45) DEFAULT NULL,
+  `comment` varchar(45) DEFAULT NULL,
+  `time` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Final view structure for view `lottoviews`
+-- Dumping data for table `comment`
 --
 
-/*!50001 DROP VIEW IF EXISTS `lottoviews`*/;
-/*!50001 SET @saved_cs_client          = @@character_set_client */;
-/*!50001 SET @saved_cs_results         = @@character_set_results */;
-/*!50001 SET @saved_col_connection     = @@collation_connection */;
-/*!50001 SET character_set_client      = utf8mb4 */;
-/*!50001 SET character_set_results     = utf8mb4 */;
-/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
-/*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `lottoviews` AS select `lottoresult`.`id` AS `id`,`member`.`memberno` AS `memberno`,`member`.`name` AS `name`,`lotto`.`gunno` AS `gunno`,`lotto`.`gunname` AS `gunname`,`lottoresult`.`amount` AS `amount`,`lottoresult`.`datetime` AS `datetime` from ((`lottoresult` join `member` on((`lottoresult`.`memberno` = `member`.`memberno`))) join `lotto` on((`lottoresult`.`gunno` = `lotto`.`gunno`))) order by `lottoresult`.`id` */;
-/*!50001 SET character_set_client     /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+LOCK TABLES `comment` WRITE;
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+INSERT INTO `comment` VALUES (1,'A0017','kk','太讚啦!!','2024年7月1日 上午10:39:01'),(2,'A0010','Eric','喔耶','2024年7月1日 上午10:39:33'),(3,'A0010','Eric','我又來啦!!','2024年7月1日 上午11:02:06'),(4,'A0003','小智','吉伊卡哇好可愛!!!','2024年7月1日 上午11:29:49'),(5,'A0004','優里','烏薩奇 呀哈!!!  ','2024年7月1日 上午11:35:59'),(/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

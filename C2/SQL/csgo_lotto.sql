@@ -1,6 +1,7 @@
-CREATE DATABASE  IF NOT EXISTS `csgo` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `csgo`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+--
+-- Host: localhost    Database: csgo
+-- -------------------------------------------------------- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: csgo
 -- ------------------------------------------------------
@@ -29,19 +30,17 @@ CREATE TABLE `lotto` (
   `gunno` varchar(45) DEFAULT NULL,
   `gunname` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `lotto`
---
-
-LOCK TABLES `lotto` WRITE;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DLOCK TABLES `lotto` WRITE;
 /*!40000 ALTER TABLE `lotto` DISABLE KEYS */;
-INSERT INTO `lotto` VALUES (1,'X001','MP7焦地'),(2,'X002','M249淹沒'),(3,'X003','R8-Revolver鑲嵌'),(4,'X004','AWP-刺鱗樹蝰'),(5,'X005','M4A4-荷魯斯之眼'),(6,'X006','P250-阿佩普詛咒'),(7,'X007','FAMAS-奈芙蒂斯之河'),(8,'X008','P90-聖甲蟲突擊'),(9,'X009','Nova-索貝克之嚼'),(10,'X010','Glock-18-拉美西斯之伸'),(11,'X011','AWP-黑尼羅'),(12,'X012','AK-47-鋼鐵三角洲'),(13,'X013','XM1014-象形文字'),(14,'X014','AUG-蛇穴'),(15,'X015','MAC-10-迴沙');
-/*!40000 ALTER TABLE `lotto` ENABLE KEYS */;
+INSERT INTO `lotto` VALUES (1,'X001','MP7焦地'),(2,'X002','M249淹沒'),(3,'X003LOCK TABLES `lotto` WRITE;
+/*!40000 ALTER TABLE `lotto` DISABLE KEYS */;
+INSERT INTO `lotto` VALUES (1,'X001','MP7焦地'),(2,'X002','M249淹沒'),(3,'X003','R8-Revolver鑲嵌'),(4,'X004','AWP-刺鱗樹蝰'),(5,'X005','M4A4-荷魯斯之眼'),(6,'X006','P250-阿佩普詛咒'),(7,'X007','FAMAS-奈芙蒂斯之河'),(8,'X008','P90-聖甲蟲突擊'),(9,'X009','Nova-索貝克之嚼'),(10,'X010','Glock-18-拉美西斯之�/*!40000 ALTER TABLE `lotto` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 S/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-06-30 20:26:18
+-- Dump completed on 2024-07-01 11:54:45

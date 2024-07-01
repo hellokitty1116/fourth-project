@@ -12,11 +12,13 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
@@ -24,6 +26,7 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 
+import controller.CommentUI;
 import controller.member.LoginSuccessUI;
 import model.Member;
 import util.cal;
@@ -75,7 +78,32 @@ public class ForumUI extends JFrame {
      * Create the frame.
      */
     public ForumUI() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                int response = JOptionPane.showConfirmDialog(
+                        ForumUI.this,
+                        "是否留下您對遊戲的評論",
+                        "確認",
+                        JOptionPane.YES_NO_OPTION
+                );
+                if (response == JOptionPane.YES_OPTION) {
+                    EventQueue.invokeLater(new Runnable() {
+                        public void run() {
+                            try {
+                                CommentUI commentFrame = new CommentUI();
+                                commentFrame.setVisible(true);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
+                    dispose();
+                }
+            }
+        });
+
         setBounds(100, 100, 1322, 892);
         setLocationRelativeTo(null);
         contentPane = new JPanel();
